@@ -1,14 +1,14 @@
 # Informatica-3B-sia
 <!--
-author:   Gionata Massi
+author:   Sumna Begom
 
-email:    gionata.massi@savoiabenincasa.it
+email:    sumna.begom@savoiabenincasa.it
 
 version:  0.0.1
 
 language: it
 
-narrator: IT Italian Male
+narrator: IT Italian Female
 
 comment:  Quaderno elettronico di Informatica. Classe 3za. Capitolo 4. Il linguaggio C++.
 
@@ -130,6 +130,27 @@ int main() {
     cin >> b;
     p = a * b;
     cout << "Il prodotto di " << a << " e " << b << " e' pari a " << p << "." << endl;
+#Il linguaggio C++
+##Le basi del linguaggio
+###Programma a pag. 93 - Tipi.cpp
+// Tipi.cpp:dimensioni     dei tipi
+#include <iostream>
+using namespace std;
+
+int main () {
+    cout << "Dimensioni di int: " << sizeof(int) << " byte\n";
+    cout << "Dimensioni di short int: " << sizeof(short int) << " byte\n;
+    cout << "Dimensioni di long int: " << sizeof(long int) << " byte\n; 
+    cout << "Dimensioni di long long int: " << sizeof(long long int) << " byte\n;
+    cout << "Dimensioni di float: " << sizeof(float) << " byte\n; 
+    cout << "Dimensioni di double: " << sizeof(double) << " byte\n;
+    cout << "Dimensioni di long double " << sizeof(long double) << " byte\n;
+    cout << "Dimensioni di char " << sizeof(chair) << " byte\n;
+    cout << "Dimensioni di bool " << sizeof(bool) << " byte\n;
+    return 0;
+}
+
+@LIA.cpp
 
     return 0;
 }
