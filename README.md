@@ -152,6 +152,46 @@ int main () {
 
 @LIA.cpp
 
+
+#### 6.Assegnazione dei valori alle variabili (pag 94)
+
+In C++ una variabile è uno spazio di memoria identificato da un nome, all’interno del quale è possibile memorizzare un valore. Prima di poterle utilizzare, le variabili devono sempre essere dichiarate specificando il loro tipo (ad esempio int, double, char). L’assegnazione di un valore a una variabile avviene tramite l’operatore =, che copia il valore presente a destra all’interno della variabile posta a sinistra.
+
+L’inizializzazione può avvenire direttamente nella dichiarazione oppure successivamente. Esistono diversi modi per inizializzare una variabile: quello tradizionale con l’operatore =, quello con le parentesi tonde e l’inizializzazione con parentesi graffe introdotta in C++11, che è più sicura perché evita conversioni indesiderate. È anche possibile effettuare riassegnazioni durante l’esecuzione del programma, modificando il valore precedentemente contenuto nella variabile. Inoltre, C++ permette l’assegnazione a catena, che consente di dare lo stesso valore a più variabili in una sola istruzione. Le variabili possono essere inizializzate anche mediante espressioni, e C++ esegue automaticamente conversioni tra tipi diversi quando necessario, anche se ciò può comportare perdita di precisione. È possibile assegnare il valore di una variabile a un’altra, purché i tipi siano compatibili. Infine, le costanti dichiarate con la parola chiave const possono essere inizializzate una sola volta e poi non possono più essere modificate.
+``` cpp +Prodotto.cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Dichiarazione e inizializzazioni con vari metodi
+    int a = 10;        // inizializzazione classica
+    int b(20);         // inizializzazione con parentesi tonde
+    int c{30};         // inizializzazione sicura C++11
+
+    // Riassegnazione
+    a = a + 5;         // a diventa 15
+
+    // Assegnazione tra variabili
+    b = c;             // b diventa 30
+
+    // Assegnazione multipla
+    int x, y, z;
+    x = y = z = 3;     // tutte e tre valgono 3
+
+    // Conversione implicita
+    double d = a;      // 15 diventa 15.0
+
+    // Costante
+    const int MAX = 100;
+
+    // Output finale
+    cout << "a: " << a << endl;
+    cout << "b: " << b << endl;
+    cout << "c: " << c << endl;
+    cout << "x, y, z: " << x << ", " << y << ", " << z << endl;
+    cout << "d: " << d << endl;
+    cout << "MAX: " << MAX << endl;
+
     return 0;
 }
-```
+@LIA.cpp
