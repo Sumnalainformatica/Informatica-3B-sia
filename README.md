@@ -14,8 +14,6 @@ comment:  Quaderno elettronico di Informatica. Classe 3za. Capitolo 4. Il lingua
 
 import: https://raw.githubusercontent.com/LiaScript/CodeRunner/master/README.md
 
-import: https://raw.githubusercontent.com/liascript-templates/plantUML/master/README.md
-
 -->
 
 # Il linguaggio C++
@@ -81,7 +79,7 @@ int main() {
     return 0;
 }
 ```
-@LIA.evalWithDebug(`["Somma.cpp"]`, `g++ -g -Wall Somma.cpp -o a.out`, `./a.out`)
+@LIA.cpp
 
 
 Per usare PythonTutor devo impostare dei valori alle variabili di input.
