@@ -157,39 +157,28 @@ In C++ una variabile è uno spazio di memoria identificato da un nome, all'inter
 
 L'inizializzazione può avvenire direttamente nella dichiarazione oppure successivamente. Esistono diversi modi per inizializzare una variabile: quello tradizionale con l'operatore =, quello con le parentesi tonde e l'inizializzazione con parentesi graffe introdotta in C++11, che è più sicura perché evita conversioni indesiderate. È anche possibile effettuare riassegnazioni durante l'esecuzione del programma, modificando il valore precedentemente contenuto nella variabile. Inoltre, C++ permette l'assegnazione a catena, che consente di dare lo stesso valore a più variabili in una sola istruzione. Le variabili possono essere inizializzate anche mediante espressioni, e C++ esegue automaticamente conversioni tra tipi diversi quando necessario, anche se ciò può comportare perdita di precisione. È possibile assegnare il valore di una variabile a un'altra, purché i tipi siano compatibili. Infine, le costanti dichiarate con la parola chiave const possono essere inizializzate una sola volta e poi non possono più essere modificate.
 
-``` cpp +Prodotto.cpp
+## Assegnazione
+
+### File.cpp - pag. 94
+
+``` c +assegnazione.cpp
+// assegnazione.cpp
+#include <string>
 #include <iostream>
 using namespace std;
 
 int main() {
-    // Dichiarazione e inizializzazioni con vari metodi
-    int a = 10;        // inizializzazione classica
-    int b(20);         // inizializzazione con parentesi tonde
-    int c{30};         // inizializzazione sicura C++11
-
-    // Riassegnazione
-    a = a + 5;         // a diventa 15
-
-    // Assegnazione tra variabili
-    b = c;             // b diventa 30
-
-    // Assegnazione multipla
-    int x, y, z;
-    x = y = z = 3;     // tutte e tre valgono 3
-
-    // Conversione implicita
-    double d = a;      // 15 diventa 15.0
-
-    // Costante
-    const int MAX = 100;
-
-    // Output finale
-    cout << "a: " << a << endl;
-    cout << "b: " << b << endl;
-    cout << "c: " << c << endl;
-    cout << "x, y, z: " << x << ", " << y << ", " << z << endl;
-    cout << "d: " << d << endl;
-    cout << "MAX: " << MAX << endl;
+    double raggio = 10;
+    double area = raggio * raggio * 3.14;
+    int tempo_in_sec = 900;
+    int durata_in_minuti = tempo_in_sec / 60;
+    double spazio = 1000; // 1 km
+    double tempo = 6 * 60; // 6 minuti
+    double velocita = spazio / tempo;
+    const string cognome = "Rossi";
+    string nome("Mario");
+    
+    cout << cognome << " " << nome << endl;
 
     return 0;
 }
