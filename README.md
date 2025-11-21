@@ -200,37 +200,11 @@ C++ permette di effettuare cast anche tra tipi compatibili, ad esempio da char a
 using namespace std;
 
 int main() {
-    int a = 7;
-    int b = 2;
-
-    // Divisione intera (perde la parte decimale)
-    int risultato_intero = a / b;     // vale 3
-
-    // Casting esplicito in stile C (double)
-    double risultato_c_style = (double)a / b; // vale 3.5
-
-    // Casting esplicito in stile C++ (static_cast)
-    double risultato_cpp_style = static_cast<double>(a) / b; // vale 3.5
-
-    // Conversione implicita
-    double d = a;   // d diventa 7.0
-
-    // Casting verso un tipo più piccolo
-    double pi = 3.14159;
-    int pi_intero = static_cast<int>(pi); // vale 3, perde i decimali
-
-    // Casting tra tipi completamente diversi (char -> int)
-    char lettera = 'A';
-    int codice_ascii = static_cast<int>(lettera); // vale 65
-
-    // Output
-    cout << "Divisione intera: " << risultato_intero << endl;
-    cout << "Casting stile C: " << risultato_c_style << endl;
-    cout << "Casting stile C++: " << risultato_cpp_style << endl;
-    cout << "Conversione implicita: " << d << endl;
-    cout << "Casting double -> int: " << pi_intero << endl;
-    cout << "Char 'A' in int: " << codice_ascii << endl;
-
+    int a = 5;
+    float b = 3.56;
+    a = b;
+    cout << a;
+   
     return 0;
 }
 ```
@@ -247,43 +221,12 @@ Gli operatori logici, invece, servono per combinare più condizioni booleane e o
 Combinando operatori di relazione e operatori logici si possono creare condizioni anche molto articolate, utili per controllare flussi complessi nel programma. È importante ricordare che queste espressioni restituiscono sempre un valore booleano, anche quando i confronti riguardano variabili numeriche o caratteri.
 
 ``` cpp +Prodotto.cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    int a = 10;
-    int b = 20;
-    int c = 10;
-
-    // Operatori di relazione
-    bool uguali = (a == c);       // true
-    bool diversi = (a != b);      // true
-    bool maggiore = (b > a);      // true
-    bool minoreUguale = (a <= c); // true
-
-    // Operatori logici
-    bool condizione_and = (a == c) && (b > a);      // true AND true -> true
-    bool condizione_or = (a == b) || (b > a);       // false OR true -> true
-    bool negazione = !(a == b);                     // !(false) -> true
-
-    // Uso combinato in una condizione
-    if ((a == c && b > a) || !(b == c)) {
-        cout << "La condizione complessa è vera." << endl;
-    } else {
-        cout << "La condizione complessa è falsa." << endl;
-    }
-
-    // Output dei risultati
-    cout << "a == c: " << uguali << endl;
-    cout << "a != b: " << diversi << endl;
-    cout << "b > a: " << maggiore << endl;
-    cout << "a <= c: " << minoreUguale << endl;
-    cout << "(a==c && b>a): " << condizione_and << endl;
-    cout << "(a==b || b>a): " << condizione_or << endl;
-    cout << "!(a==b): " << negazione << endl;
-
-    return 0;
-}
+a >= c
+b < 5
+f != g
+(a > b) && (c == 3)
+(a == 5 ) || (a== 7)
+!(a > 4)
 ```
 @LIA.cpp
 
@@ -298,34 +241,24 @@ Le istruzioni di ingresso invece usano l'oggetto cin assieme all'operatore >>, c
 È possibile concatenare più letture in un'unica istruzione cin, e spesso si scrivono messaggi con cout prima delle letture per guidare l'utente. La combinazione di input e output permette di realizzare programmi interattivi che elaborano e mostrano risultati in base alle informazioni ricevute.
 
 ``` cpp +Prodotto.cpp
+// parcogiochi.cpp: divisione dei biglietti
 #include <iostream>
 using namespace std;
 
 int main() {
-    int eta;
-    double altezza;
-    string nome;
+   // input
+int biglietti, ragazzi;
+// output
+int quota, avanzo;
 
-    // Messaggi in uscita
-    cout << "Inserisci il tuo nome: ";
-    
-    // Lettura stringa con una sola parola
-    cin >> nome;
-
-    cout << "Inserisci la tua eta: ";
-    cin >> eta;
-
-    cout << "Inserisci la tua altezza in metri: ";
-    cin >> altezza;
-
-    // Uscita dei dati inseriti
-    cout << "\n--- RISULTATI ---\n";
-    cout << "Nome: " << nome << endl;
-    cout << "Eta: " << eta << " anni" << endl;
-    cout << "Altezza: " << altezza << " m\n";
-
+cout << "Numeri di biglietti e di ragazzi: ";
+cin >> biglietti / ragazzi;
+avanzo = biglietti % ragazzi;
+count << "Ad ogni ragazzo spettano" << quota << "biglietti" << endl;
+count << "e ne avanzano" << avanzo << ensl;
     return 0;
 }
+
 ```
 @LIA.cpp
 
@@ -341,35 +274,39 @@ Per gestire situazioni in cui il programma deve prendere decisioni, C++ utilizza
 L'uso corretto delle strutture di alternativa è fondamentale sia per evitare errori di esecuzione sia per correggere errori logici, poiché consente di controllare i dati prima di usarli e di rendere il comportamento del programma più preciso e prevedibile.
 
 ``` cpp +Prodotto.cpp
+// Quoziente.cpp: divisione di due numeri
 #include <iostream>
 using namespace std;
 
 int main() {
-    int a, b;
-
-    cout << "Inserisci due numeri: ";
+    int a, b, q;
     cin >> a >> b;
-
-    // Struttura di alternativa per evitare errore di esecuzione
-    if (b != 0) {
-        cout << "Risultato della divisione: " << a / b << endl;
-    } else {
-        cout << "Errore: impossibile dividere per zero." << endl;
-    }
-
-    // Esempio di errore logico (voluto): uso della sottrazione al posto della somma
-    int somma = a - b;  // LOGICAMENTE sbagliato
-    cout << "Somma (errata a causa di errore logico): " << somma << endl;
-
-    // Esempio di errore di compilazione (scritto come commento)
-    // int x = "testo";  // ERRORE: tipo non compatibile con int
-
+    q = a / b;
+    count << q;
     return 0;
 }
 
 ```
 @LIA.cpp
+``` cpp +Prodotto.cpp
+// Ordina.cpp: due numeri in ordine crescente
+#include <iostream>
+using namespace std;
+int main() {
+// input
+int a, b;
 
+cout << "due numeri: ";
+cin >> a >> b;
+if (a < b) {
+cout << a << endl;
+cout << b << endl; }
+else {
+cout << b << endl;
+cout << a << endl;}
+return 0;}
+```
+@LIA.cpp
 ## le ripetizione nel c++ (pag 111-116)
 Nel linguaggio C++ le strutture di ripetizione permettono di eseguire un insieme di istruzioni più volte, finché una condizione è soddisfatta o finché viene raggiunto un numero prefissato di iterazioni. Le ripetizioni servono per automatizzare operazioni, evitare codice ripetitivo e gestire sequenze di calcoli o controlli.
 
@@ -380,32 +317,27 @@ Un'altra forma di ripetizione è la ripetizione con contatore, rappresentata dal
 Oltre a queste, esistono forme generiche di ripetizione, come il ciclo do…while, che garantisce almeno un'esecuzione del blocco prima di controllare la condizione, ma appartiene alle strutture di ripetizione non precondizionali. In generale, l'uso corretto dei cicli consente di controllare il flusso del programma e di gestire operazioni iterative in modo efficiente e organizzato.
 
 ``` cpp +Prodotto.cpp
+// Elenco2.cpp: elenco di persone
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main() {
 
-    int num;
-    int somma = 0;
-
-    cout << "Inserisci numeri positivi (0 per terminare): ";
-    cin >> num;
-
-    // RIPETIZIONE PRECONDIZIONALE (while)
-    while (num > 0) {     // si ripete finché la condizione è vera
-        somma += num;
-        cin >> num;
-    }
-
-    cout << "Somma dei numeri inseriti: " << somma << endl;
-
-    // RIPETIZIONE CON CONTATORE (for)
-    cout << "Conto da 1 a 5 usando un ciclo for: ";
-    for (int i = 1; i <= 5; i++) {   // contatore da 1 a 5
-        cout << i << " ";
-    }
-
-    cout << endl;
+    // input
+    string name;
+    int eta;
+    // output
+    int conta=0;
+    cout << "name (*=fine): ";
+    cin >> name;
+while (nome != "*"):";
+        cin >> eta;
+if (eta >= 18) conta++;
+   
+    cout << "nome (*=fine) ";
+cin >> nome; }
+cout << "i maggiorenni sono =" << conta >> endl;
     return 0;
 }
 ```
