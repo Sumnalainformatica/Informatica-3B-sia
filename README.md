@@ -317,27 +317,26 @@ Un'altra forma di ripetizione è la ripetizione con contatore, rappresentata dal
 Oltre a queste, esistono forme generiche di ripetizione, come il ciclo do…while, che garantisce almeno un'esecuzione del blocco prima di controllare la condizione, ma appartiene alle strutture di ripetizione non precondizionali. In generale, l'uso corretto dei cicli consente di controllare il flusso del programma e di gestire operazioni iterative in modo efficiente e organizzato.
 
 ``` cpp +Prodotto.cpp
-// Elenco2.cpp: elenco di persone
+// Massimo.cpp: massimo di n numeri
 #include <iostream>
-#include <string>
 using namespace std;
 
 int main() {
+//int
+int n;    // numero dei dati inseriti
+int dato;   //dato inserito
+// output
+int max;    // massimo
 
-    // input
-    string name;
-    int eta;
-    // output
-    int conta=0;
-    cout << "name (*=fine): ";
-    cin >> name;
-while (nome != "*"):";
-        cin >> eta;
-if (eta >= 18) conta++;
-   
-    cout << "nome (*=fine) ";
-cin >> nome; }
-cout << "i maggiorenni sono =" << conta >> endl;
+cout << "quanti sono i dati?"
+cin >> n;
+for (int i=1; i<=n; i++) {
+cout << "inserisci il "<< i <<" . dato:";
+cin >> dato;
+if (i ==1) max = dato;
+if (dato > max) max=dato; }
+cout << "il massimo valore e' " << max << endl;
+    
     return 0;
 }
 ```
@@ -350,16 +349,20 @@ In C++ lo strumento di scelta multipla, rappresentato dall'istruzione switch, pe
 La sintassi generale è:
 
 ``` cpp +Somma.cpp
-switch (espressione) {
+switch (variabile) {
     case valore1:
-        // istruzioni se espressione == valore1
-        break;
+       istruzioni1;
+         break;
     case valore2:
-        // istruzioni se espressione == valore2
-        break;
-    ...
-    default:
-        // istruzioni se nessun caso precedente corrisponde
+       istruzioni2
+       break;
+  ............
+case valoren:
+  istruzionin;
+      break;
+   default:
+     istruzioni;
+      break;
 }
 ```
 @LIA.cpp
@@ -379,41 +382,51 @@ Il default è opzionale e viene eseguito se nessun caso corrisponde.
 Il switch-case è utile quando si devono gestire scelte tra numeri, caratteri o enumerazioni, rendendo il codice più leggibile rispetto a molteplici if-else if.
 
 ``` cpp +Prodotto.cpp
+// scontoprogressivo.cpp: sconto progressivo sui prodotti
 #include <iostream>
 using namespace std;
 
 int main() {
     int giorno;
+        // int
+         float prezzo;     //prezzo del prodotto
+         int pezzi;        // pezzi acquistati
+       // output
+        float omporto;    // importo da pagare
+       // lavoro
+        int sconto;      // percentuale di sconto
 
-    cout << "Inserisci un numero da 1 a 7: ";
-    cin >> giorno;
-
-    switch (giorno) {
+    cout << "pezzi acquistati: ";
+    cin >> pezzi;
+    cout << "prezzo del prodotto:";
+    cin >> prezzo;
+    switch (pezzi) {
         case 1:
-            cout << "Lunedi" << endl;
+            cout << "9" << endl;
             break;
         case 2:
-            cout << "Martedi" << endl;
+            cout << "8" << endl;
             break;
         case 3:
-            cout << "Mercoledi" << endl;
+            cout << "7" << endl;
             break;
         case 4:
-            cout << "Giovedi" << endl;
+            cout << "6" << endl;
             break;
         case 5:
-            cout << "Venerdi" << endl;
+            cout << "5" << endl;
             break;
         case 6:
-            cout << "Sabato" << endl;
+            cout << "4" << endl;
             break;
         case 7:
-            cout << "Domenica" << endl;
+            cout << "3" << endl;
             break;
         default:
-            cout << "Numero non valido!" << endl;
+            sconto = 40;
     }
-
+    importo = pezzi * pezzo * (100.0-sconto)/100.0;
+   cout << "importo da pagare=" << impoto << endl;
     return 0;
 }
 ```
