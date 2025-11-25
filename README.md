@@ -356,13 +356,12 @@ switch (variabile) {
     case valore2:
        istruzioni2
        break;
-  ............
-case valoren:
-  istruzionin;
-      break;
+    case valoren:
+       istruzionin;
+        break;
    default:
-     istruzioni;
-      break;
+        istruzioni;
+          break;
 }
 ```
 @LIA.cpp
@@ -426,7 +425,7 @@ int main() {
             sconto = 40;
     }
     importo = pezzi * pezzo * (100.0-sconto)/100.0;
-   cout << "importo da pagare=" << impoto << endl;
+   cout << "importo da pagare=" << importo << endl;
     return 0;
 }
 ```
