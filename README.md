@@ -221,12 +221,21 @@ Gli operatori logici, invece, servono per combinare più condizioni booleane e o
 Combinando operatori di relazione e operatori logici si possono creare condizioni anche molto articolate, utili per controllare flussi complessi nel programma. È importante ricordare che queste espressioni restituiscono sempre un valore booleano, anche quando i confronti riguardano variabili numeriche o caratteri.
 
 ``` cpp +Prodotto.cpp
-a >= c
-b < 5
-f != g
-(a > b) && (c == 3)
-(a == 5 ) || (a== 7)
-!(a > 4)
+// asssegnazione.cpp
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+  int a = 5;
+  int b = 2;
+  float c = 3.56;
+  float p;
+  p = a/b + c;
+  cout << p;
+
+  return 0;
+}
 ```
 @LIA.cpp
 
@@ -307,14 +316,98 @@ cout << a << endl;}
 return 0;}
 ```
 @LIA.cpp
+
+## l'importanza della documentazione e le sequenze (pag 106)
+La documentazione in C++ è fondamentale perché rende il codice più chiaro, comprensibile e facile da mantenere. Grazie ai commenti e a strumenti come Doxygen, è possibile spiegare il funzionamento delle funzioni, le scelte progettuali e l’uso delle strutture dati, riducendo errori e facilitando il lavoro di squadra. Tra gli elementi più importanti del linguaggio ci sono le sequenze, ovvero i contenitori ordinati della STL come vector, list e deque. Le sequenze permettono di gestire raccolte di dati in modo efficiente e offrono funzionalità avanzate grazie agli algoritmi standard. Il contenitore più usato è std::vector, che rappresenta un array dinamico flessibile e veloce. Un esempio che mostra sia la documentazione tramite commenti sia l’uso di una sequenza è il seguente:
+``` cpp +Prodotto.cpp
+//calcolosconto.cpp: calcolo del prezzo
+#include <iostream>
+#include <string>
+using nomespace std;
+const int PERC = 20;
+int main ()
+{
+   //variabili di input-output
+   string descrizione;
+   float prezzo;
+   //variabili di lavoro
+   float sconto;
+
+  cout <<"descrizione e prezzo: ";
+  cin >> descrizione >> prezzo;
+  sconto = prezzo * PERC / 100;
+  prezzo = prezzo - sconto;
+  cout << descrizione << ":" << prezzo << endl;
+ return 0;
+}
+```
+@LIA.cpp
+
+
+
 ## le ripetizione nel c++ (pag 111-116)
 Nel linguaggio C++ le strutture di ripetizione permettono di eseguire un insieme di istruzioni più volte, finché una condizione è soddisfatta o finché viene raggiunto un numero prefissato di iterazioni. Le ripetizioni servono per automatizzare operazioni, evitare codice ripetitivo e gestire sequenze di calcoli o controlli.
+``` cpp +Prodotto.cpp
+// Elenco1.cpp: elenco di persone
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main ()
+{
+  //input
+  string name;
+  int eta;
+  int risp;
+  //output
+  int conta=0;
+
+do{
+cout<< "name:";
+cin >> name;
+cout<< "Eta:" ;
+cin >> eta;
+if (eta>=18) conta++;
+cout << "elenco finito: 0=no, 1=si?";
+cin >> risp;
+} while (risp ==0);
+
+cout << "i maggiorenni sono "<< conta << endl;
+return 0;
+}
+```
+@LIA.cpp
 
 La ripetizione precondizionale è quella in cui la condizione viene verificata prima di eseguire il blocco di istruzioni. In C++ questa struttura è rappresentata dal ciclo while. Il corpo del ciclo viene eseguito solo se la condizione iniziale risulta vera: se è falsa sin dall'inizio, il ciclo non viene eseguito nemmeno una volta. Questo tipo di ripetizione è utile quando non si sa in anticipo quante volte sarà necessario ripetere un'operazione.
+``` cpp +Prodotto.cpp
+// divisione.cpp: divisione tra interi con sottrazioni successive
+#include <iostream>
+using namespace std;
+int main()
+{
+//input
+int a, b;
+//output
+int quoz = 0;  //quoziente della divisione tra interi
+
+cout << "due numeri (dividendo e divisore):";
+cin >> a >> b;
+while (a >= b) {
+   a-=b;
+   quoz++;
+}
+
+cout << "quoziente = " << quoz << endl;
+cout << "resto = " a << endl;
+return 0;
+}
+```
+@LIA.cpp
+
+
+
 
 Un'altra forma di ripetizione è la ripetizione con contatore, rappresentata dal ciclo for. Questa struttura è ideale quando si conosce esattamente il numero di iterazioni da eseguire. Il ciclo for include in un'unica riga l'inizializzazione del contatore, la condizione di continuazione e l'aggiornamento del contatore, rendendolo particolarmente compatto e leggibile.
-
-Oltre a queste, esistono forme generiche di ripetizione, come il ciclo do…while, che garantisce almeno un'esecuzione del blocco prima di controllare la condizione, ma appartiene alle strutture di ripetizione non precondizionali. In generale, l'uso corretto dei cicli consente di controllare il flusso del programma e di gestire operazioni iterative in modo efficiente e organizzato.
 
 ``` cpp +Prodotto.cpp
 // Massimo.cpp: massimo di n numeri
