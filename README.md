@@ -1,4 +1,3 @@
-# Informatica-3B-sia
 <!--
 author:   Sumna Begom
 
