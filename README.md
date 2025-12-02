@@ -234,7 +234,8 @@ int main()
 
 ## le istruzioni di ingresso e di uscita (pag 101)
 
-In C++ l’input si ottiene dalla tastiera con cin e l’output viene mostrato sullo schermo con cout. Gli operatori dedicati permettono di leggere valori inseriti dall’utente e di visualizzare risultati o messaggi. Per usarli serve includere la libreria dell’I/O. È possibile combinare testo e variabili nell’output e usare caratteri speciali per formattare il messaggio. Altri canali di output, come cerr e clog, sono destinati rispettivamente agli errori e ai messaggi di log. Un esempio mostra come richiedere dati, elaborarli e mostrarne l’esito.
+In C++ l’input si ottiene dalla tastiera con cin e l’output viene mostrato sullo schermo con cout. Gli operatori dedicati permettono di leggere valori inseriti dall’utente e di visualizzare risultati o messaggi. Per usarli serve includere la libreria dell’I/O. È possibile combinare testo e variabili nell’output e usare caratteri speciali per formattare il messaggio. Altri canali di output, come cerr e clog, sono destinati rispettivamente agli errori e ai messaggi di log.
+
 
 ``` cpp +Prodotto.cpp
 // parcogiochi.cpp: divisione dei biglietti
